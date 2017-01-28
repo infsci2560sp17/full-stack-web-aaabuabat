@@ -1,15 +1,19 @@
 #iRestaurant
 
 1. What is the proposed name for your Web application?
+
 iRestaurant, an online restaurant that provides different food from different cuisine.
 
 2. Who is the target audience?
+
 The restaurant is intended to target those who have no time (or busy)  to get a decent meal without going to a restaurant by giving them a meal from a variety of different choices from different cuisine. 
 
 3. What problem is it intended to solve for the target audience?
+
 Anyone who is busy, for example, students, an employee who has abundant tasks that have to be finished, so they have no time to prepare a delicious meal. Furthermore, it is not easy to get a diversity of choices from just one restaurant. Therefore, this project, iRestaurant, will provide a friendly website for those people as an option to taste different dishes from different cuisines.   
 
 4. How will it meet the minimum project requirements?
+
 All customer will be able to create an account on the restaurant’s website, and then they can order a new order or repeat their past orders. Moreover, the restaurant site will enable the customers to review a meal, rated, and post meal’s picture. Finally, if the user wishes to delete his/her account, the restaurant site will provide the required procedure to do so.
 
 
