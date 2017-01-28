@@ -1,21 +1,20 @@
 #iRestaurant
 
 1. What is the proposed name for your Web application?
-iRestaurant, an online restaurant that provides different food from different cuisine.
+- iRestaurant, an online restaurant that provides different food from different cuisine.
 
 2. Who is the target audience?
-The restaurant is intended to target those who have no time (or busy)  to get a decent meal without going to a restaurant by giving them a meal from a variety of different choices from different cuisine. 
+- The restaurant is intended to target those who have no time (or busy)  to get a decent meal without going to a restaurant by giving them a meal from a variety of different choices from different cuisine. 
 
 3. What problem is it intended to solve for the target audience?
-Anyone who is busy, for example, students, an employee who has abundant tasks that have to be finished, so they have no time to prepare a delicious meal. Furthermore, it is not easy to get a diversity of choices from just one restaurant. Therefore, this project, iRestaurant, will provide a friendly website for those people as an option to taste different dishes from different cuisines.   
+- Anyone who is busy, for example, students, an employee who has abundant tasks that have to be finished, so they have no time to prepare a delicious meal. Furthermore, it is not easy to get a diversity of choices from just one restaurant. Therefore, this project, iRestaurant, will provide a friendly website for those people as an option to taste different dishes from different cuisines.   
 
 4. How will it meet the minimum project requirements?
-All customer will be able to create an account on the restaurant’s website, and then they can order a new order or repeat their past orders. Moreover, the restaurant site will enable the customers to review a meal, rated, and post meal’s picture. Finally, if the user wishes to delete his/her account, the restaurant site will provide the required procedure to do so.
+- All customer will be able to create an account on the restaurant’s website, and then they can order a new order or repeat their past orders. Moreover, the restaurant site will enable the customers to review a meal, rated, and post meal’s picture. Finally, if the user wishes to delete his/her account, the restaurant site will provide the required procedure to do so.
 
 
 5. Why is your proposed Web application unique or creative beyond simply meeting the minimum requirements?
-
-Since the most of the online restaurants in the market are based on connecting other restaurants with the customer without providing fancy details for the meals and enable the customers to write reviews or rated, this restaurant, iRestaurant will be more interactive. So the reason why I want to make it a restaurant, not just connecting other restaurants without having the ability to order (so it is a restaurant), is that I want the customers to interact with each other and they can through that have adequate details for ever meal.
+- Since the most of the online restaurants in the market are based on connecting other restaurants with the customer without providing fancy details for the meals and enable the customers to write reviews or rated, this restaurant, iRestaurant will be more interactive. So the reason why I want to make it a restaurant, not just connecting other restaurants without having the ability to order (so it is a restaurant), is that I want the customers to interact with each other and they can through that have adequate details for ever meal.
  
 
 
