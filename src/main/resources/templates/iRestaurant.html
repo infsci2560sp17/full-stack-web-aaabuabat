@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welocme to iRestaurant</title>
+    </head>
+    <body>
+        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s iRestaurant's!</h1>
+
+        <div>
+            <table style="border: 1px solid black">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Cuisine Type</th>
+                </tr>                
+                <tr data-th-each="iRestaurant : ${meals}">
+                    <td data-th-text="${iRestaurant.id}"></td>
+                    <td data-th-text="${iRestaurant.title}"></td>
+                    <td data-th-text="${iRestaurant.CuisineType}"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <hr />
+        Add Meal<br />
+        <form data-th-action="@{/Meal/add}" name="addMealForm" method="post">
+            Title: <input type="text" name="title" /><br />
+            Cuisine Type:<br />
+            <input type="radio" name="CuisineType" value="Mediterranean" checked="checked" /> Mediterranean<br />
+            <input type="radio" name="CuisineType" value="Indian" /> Indian<br />
+            <input type="radio" name="CuisineType" value="Ozbki" /> Ozbki<br />
+            <input type="radio" name="CuisineType" value="Westren" /> Westren<br />
+            <input type="radio" name="CuisineType" value="chinese" /> chinese<br />
+            <input type="submit" value="Add Meal"/>
+        </form>
+        
+        <hr />       
+        <form data-th-action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </body>
+</html>
