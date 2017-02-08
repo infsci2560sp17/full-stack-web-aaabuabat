@@ -17,7 +17,7 @@ public class iRestaurant {
       private static final long serialVersionUID = 1L;
 
     public enum CuisineType {
-        CuisineType ,
+        Mediterranean ,
         Indian ,
         Ozbki , 
         Westren , 
@@ -35,7 +35,7 @@ public class iRestaurant {
     public iRestaurant() {
         this.id = Long.MAX_VALUE;
         this.title = null;
-        this.CuisineType = CuisineType.Mediterranean;
+        this.CuisineType = CuisineType.Indian;
     }
 
     public iRestaurant(Long id, String name, CuisineType CuisineType) {
