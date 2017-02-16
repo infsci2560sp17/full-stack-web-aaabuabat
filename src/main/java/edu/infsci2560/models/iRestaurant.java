@@ -17,13 +17,32 @@ public class iRestaurant {
       private static final long serialVersionUID = 1L;
 
     public enum CuisineType {
+        None,
         Mediterranean ,
         Indian ,
         Ozbki , 
         Westren , 
-        chinese 
+        Chinese 
         
     
+}
+ public enum MealTime {
+        None,
+        Breakfast ,
+        Brunch ,
+        Lunch , 
+        Dinner , 
+        Supper 
+        
+}
+public enum MealType {
+        None,
+        Appetizer ,
+        Salad ,
+        Main_Course , 
+        Dessert , 
+        Beverages 
+        
 }
 
   @Id
@@ -31,22 +50,29 @@ public class iRestaurant {
     protected Long id;
     protected String title;
     protected CuisineType CuisineType;
+    protected MealTime MealTime;
+    protected MealType MealType;
+
 
     public iRestaurant() {
-        this.id = Long.MAX_VALUE;
-        this.title = null;
-        this.CuisineType = CuisineType.Indian;
+        this.id          = Long.MAX_VALUE;
+        this.title       = null;
+        this.CuisineType = CuisineType.None;
+        this.MealTime    = MealTime.None;
+        this.MealType    = MealType.None; 
     }
 
-    public iRestaurant(Long id, String name, CuisineType CuisineType) {
-        this.id = id;
-        this.title = name;
+    public iRestaurant(Long id, String title, CuisineType CuisineType, MealTime MealTime, MealType MealType) {
+        this.id          = id;
+        this.title       = title;
         this.CuisineType = CuisineType;
+        this.MealTime    = MealTime;
+        this.MealType    = MealType;
     }
 
     @Override
     public String toString() {
-        return "[ id=" + this.id + ", title=" + this.title + ", CuisineType=" + this.CuisineType + " ]";
+        return "[ id=" + this.id + ", title=" + this.title + ", CuisineType=" + this.CuisineType + ", MealTime=" + this.MealTime + ", MealType" + this.MealType + " ]";
     }
 
     @Override
@@ -86,6 +112,36 @@ public class iRestaurant {
     public void setCuisineType(CuisineType CuisineType) {
         this.CuisineType = CuisineType;
     }
+    
+        /**
+     * @return the MealTime
+     */
+    public MealTime getMealTime() {
+        return MealTime;
+    }
+
+    /**
+     * @param MealTime the MealTime to set
+     */
+    public void setMealTime(MealTime MealTime) {
+        this.MealTime = MealTime;
+    }
+    
+        /**
+     * @return the MealType
+     */
+    public MealType getMealType() {
+        return MealType;
+    }
+
+    /**
+     * @param MealType the MealType to set
+     */
+    public void setMealType(MealType MealType) {
+        this.MealType = MealType;
+    }
+    
+    
 
     /**
      * @return the id

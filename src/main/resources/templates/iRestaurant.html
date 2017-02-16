@@ -1,37 +1,69 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Welocme to iRestaurant</title>
+        <title> iRestaurant</title>
     </head>
     <body>
-        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s iRestaurant's!</h1>
-
+       
+         <h1><span data-th-inline="${#httpServletRequest.remoteUser}" data-th-remove="tag">Username</span>'s iRestaurant's!</h1>
+          <div data-th-text="${msg}"></div>
         <div>
             <table style="border: 1px solid black">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Cuisine Type</th>
+                    <th>MealTime</th>
+                    <th>MealType</th>
                 </tr>                
                 <tr data-th-each="iRestaurant : ${meals}">
                     <td data-th-text="${iRestaurant.id}"></td>
                     <td data-th-text="${iRestaurant.title}"></td>
                     <td data-th-text="${iRestaurant.CuisineType}"></td>
+                    <td data-th-text="${iRestaurant.MealTime}"></td>
+                    <td data-th-text="${iRestaurant.MealType}"></td>
                 </tr>
             </table>
         </div>
         
         <hr />
-        Add Meal<br />
+        <h2>Add Meal</h2>
         <form data-th-action="@{/Meal/add}" name="addMealForm" method="post">
             Title: <input type="text" name="title" /><br />
-            Cuisine Type:<br />
-            <input type="radio" name="CuisineType" value="Mediterranean" checked="checked" /> Mediterranean<br />
-            <input type="radio" name="CuisineType" value="Indian" /> Indian<br />
-            <input type="radio" name="CuisineType" value="Ozbki" /> Ozbki<br />
-            <input type="radio" name="CuisineType" value="Westren" /> Westren<br />
-            <input type="radio" name="CuisineType" value="chinese" /> chinese<br />
+            Cuisine Type:           
+            <select name=" CuisineType">
+                <option value="None" selected="selected">None</option>
+                <option value="Indian"> Indian</option>
+                <option value="Ozbki"> Ozbki</option>
+                <option value="Westren"> Westren</option>
+                <option value="Chinese"> Chinese</option>
+                <option value="Mediterranean"> Mediterranean</option>
+
+            </select><br />
+
+            Meal Time:           
+            <select name=" MealTime">
+                <option value="None" selected="selected">None</option>
+                <option value="Breakfast"> Breakfast</option>
+                <option value="Brunch"> Brunch</option>
+                <option value="Lunch"> Lunch</option>
+                <option value="Dinner"> Dinner</option>
+                <option value="Supper"> Supper</option>
+
+            </select><br />
+
+            Meal Type:           
+               <select name=" MealType ">
+                <option value="None" selected="selected">None</option>
+                <option value="Appetizer"> Appetizer</option>
+                <option value="Salad"> Salad</option>
+                <option value="Main_Course"> Main Course</option>
+                <option value="Dessert"> Dessert</option>
+                <option value="Beverages"> Beverages</option>
+
+            </select><br />
             <input type="submit" value="Add Meal"/>
+
         </form>
         
         <hr />       
