@@ -9,3 +9,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @author aaauabat
  */
 public interface iRestaurantRepository extends PagingAndSortingRepository<iRestaurant, Long> {}
+
+

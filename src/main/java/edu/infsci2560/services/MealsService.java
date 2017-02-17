@@ -1,7 +1,12 @@
 package edu.infsci2560.services;
 
+
+
+
+
+
 import edu.infsci2560.models.iRestaurant;
-import edu.infsci2560.models.iRestaurant.CuisineType;
+//import edu.infsci2560.models.iRestaurant.CuisineType;
 import edu.infsci2560.repositories.iRestaurantRepository;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,9 +28,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author aaabuabat
  */
 @RestController
-@RequestMapping("/public/api/iRestaurant")
+@RequestMapping("/public/api/meals")
 
-public class iRestaurantService {
+public class MealsService {
     @Autowired
     private iRestaurantRepository repository;
 

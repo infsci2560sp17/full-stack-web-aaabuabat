@@ -40,7 +40,7 @@ TODO : Modify to match your project specific Travis Build
 
 [iRestaurant](https://safe-woodland-35812.herokuapp.com/)
 
-![](http://s.gravatar.com/avatar/38959e012175f9594b4628cef77ea6c9?s=80.png)
+![](https://s.gravatar.com/avatar/38959e012175f9594b4628cef77ea6c9?s=80.png)
 
 ## Key Features
 

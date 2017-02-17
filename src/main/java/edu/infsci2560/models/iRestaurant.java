@@ -45,10 +45,13 @@ public enum MealType {
         
 }
 
+
+
   @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
     protected String title;
+    protected String description;
     protected CuisineType CuisineType;
     protected MealTime MealTime;
     protected MealType MealType;
@@ -57,14 +60,16 @@ public enum MealType {
     public iRestaurant() {
         this.id          = Long.MAX_VALUE;
         this.title       = null;
-        this.CuisineType = CuisineType.None;
-        this.MealTime    = MealTime.None;
-        this.MealType    = MealType.None; 
+        this.description = null;
+        this.CuisineType = null;
+        this.MealTime    = null;
+        this.MealType    = null; 
     }
 
-    public iRestaurant(Long id, String title, CuisineType CuisineType, MealTime MealTime, MealType MealType) {
+    public iRestaurant(Long id, String title, String description, CuisineType CuisineType, MealTime MealTime, MealType MealType) {
         this.id          = id;
         this.title       = title;
+        this.description = description;
         this.CuisineType = CuisineType;
         this.MealTime    = MealTime;
         this.MealType    = MealType;
@@ -72,7 +77,7 @@ public enum MealType {
 
     @Override
     public String toString() {
-        return "[ id=" + this.id + ", title=" + this.title + ", CuisineType=" + this.CuisineType + ", MealTime=" + this.MealTime + ", MealType" + this.MealType + " ]";
+        return "[ id=" + this.id + ", title=" + this.title + ", description" + this.description + ", CuisineType=" + this.CuisineType + ", MealTime=" + this.MealTime + ", MealType" + this.MealType + " ]";
     }
 
     @Override
@@ -98,6 +103,22 @@ public enum MealType {
     public void setTitle(String title) {
         this.title = title;
     }
+
+ /**
+     * @return the name
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * @param description the name to set
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
 
     /**
      * @return the CuisineType

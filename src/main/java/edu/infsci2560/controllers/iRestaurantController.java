@@ -24,14 +24,14 @@ public class iRestaurantController {
      @Autowired
     private iRestaurantRepository repository;
     
-    @RequestMapping(value = "meals", method = RequestMethod.GET)
+    @RequestMapping(value = "meal", method = RequestMethod.GET)
     public ModelAndView index() {        
-        return new ModelAndView("meals", "meals", repository.findAll());
+        return new ModelAndView("meal", "meal", repository.findAll());
     }
     
-    @RequestMapping(value = "meals/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView create(@ModelAttribute @Valid iRestaurant meal, BindingResult result) {
-        repository.save(meal);
-        return new ModelAndView("meals", "meals", repository.findAll());
+    @RequestMapping(value = "meal/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    public ModelAndView create(@ModelAttribute @Valid iRestaurant iRestaurant, BindingResult result) {
+        repository.save(iRestaurant);
+        return new ModelAndView("meal", "meal", repository.findAll());
     }
 }

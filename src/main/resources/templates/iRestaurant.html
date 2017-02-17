@@ -8,27 +8,29 @@
          <h1><span data-th-inline="${#httpServletRequest.remoteUser}" data-th-remove="tag">Username</span>'s iRestaurant's!</h1>
           <div data-th-text="${msg}"></div>
         <div>
-            <table style="border: 1px solid black">
+            <table style="border: 2px solid black">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Cuisine Type</th>
-                    <th>MealTime</th>
-                    <th>MealType</th>
+                    <th>Meal Time</th>
+                    <th>Meal Type</th>
+                    <th>Recipe</th>
                 </tr>                
                 <tr data-th-each="iRestaurant : ${meals}">
-                    <td data-th-text="${iRestaurant.id}"></td>
-                    <td data-th-text="${iRestaurant.title}"></td>
+                    <td data-th-text="${iRestaurant.id}         "></td>
+                    <td data-th-text="${iRestaurant.title}      "></td>
                     <td data-th-text="${iRestaurant.CuisineType}"></td>
-                    <td data-th-text="${iRestaurant.MealTime}"></td>
-                    <td data-th-text="${iRestaurant.MealType}"></td>
+                    <td data-th-text="${iRestaurant.MealTime}   "></td>
+                    <td data-th-text="${iRestaurant.MealType}   "></td>
+                    <td data-th-text="${iRestaurant.description}"></td>
                 </tr>
             </table>
         </div>
         
         <hr />
-        <h2>Add Meal</h2>
-        <form data-th-action="@{/Meal/add}" name="addMealForm" method="post">
+       Add Meal:<br />
+        <form data-th-action="@{/meals/add}" name="addMealForm" method="post">
             Title: <input type="text" name="title" /><br />
             Cuisine Type:           
             <select name=" CuisineType">
@@ -62,6 +64,9 @@
                 <option value="Beverages"> Beverages</option>
 
             </select><br />
+            
+            <textarea ="${iRestaurant.description}"rows="4" cols="50"> </textarea><br />
+
             <input type="submit" value="Add Meal"/>
 
         </form>
