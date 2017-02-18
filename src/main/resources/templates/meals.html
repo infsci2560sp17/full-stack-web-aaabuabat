@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> iRestaurant</title>
+        <title > iRestaurant  </title>  
+         <style>
+        table tr:nth-child(even) {
+            background-color: #eee;
+            padding: 5px;
+        }
+        table tr:nth-child(odd) {
+           background-color:#fff;
+           padding: 5px;
+        }
+        table th {
+            
+            background-color: white;
+            color: darkgray;
+            padding: 5px
+        }
+         body{
+        background-image: url("http://food-and-community.tesco.ie/assets/Uploads/TurkeyByriani.jpg");
+        background-repeat: no-repeat; 
+         background-size: cover;
+    }
+        </style>
     </head>
-    <body>
+   <body>
        
-        <h1><span data-th-text="${#httpServletRequest.remoteUser}" data-th-remove="tag">Username</span>'s iRestaurant's!</h1>
+        <h1 align="middle"><span data-th-text="${#httpServletRequest.remoteUser}" data-th-remove="tag"></span>iRestaurant!</h1>
           <div data-th-text="${msg}"></div>
         <div>
-            <table style="border: 2px solid black">
+            <table align="center" style="border: 2px solid black">
                 <tr>
                     <th width="50">ID                  </th>
                     <th width="50">Name                </th>
@@ -23,16 +44,18 @@
                     <td data-th-text="${iRestaurant.cuisineType}"></td>
                     <td data-th-text="${iRestaurant.mealTime}   "></td>
                     <td data-th-text="${iRestaurant.mealType}   "></td>
-               </tr>
+                    <td data-th-text="${iRestaurant.description}"></td>
+                </tr>
             </table>
         </div>
         
         <hr />
-       Add Meal:<br />
-        <form data-th-action="@{/meals/add}" name="addiRestaurantForm" method="post">
-            Title: <input type="text" name="title" /><br />
-            Cuisine Type:           
-            <select name=" cuisineType">
+      
+        <form align="middle" data-th-action="@{/meals/add}" name="addiRestaurantForm" method="post">
+            Add Meal:<br />
+            Title       : <input type="text" name="title" /><br />
+            Cuisine Type    :           
+            <select name="cuisineType">
                 <option value="None" selected="selected">None</option>
                 <option value="Indian"> Indian</option>
                 <option value="Ozbki"> Ozbki</option>
@@ -42,8 +65,8 @@
 
             </select><br />
 
-            Meal Time:           
-            <select name=" mealTime">
+            Meal Time       :           
+            <select name="mealTime">
                 <option value="None" selected="selected">None</option>
                 <option value="Breakfast"> Breakfast</option>
                 <option value="Brunch"> Brunch</option>
@@ -53,8 +76,8 @@
 
             </select><br />
 
-            Meal Type:           
-               <select name=" mealType ">
+            Meal Type       :           
+               <select name="mealType">
                 <option value="None" selected="selected">None</option>
                 <option value="Appetizer"> Appetizer</option>
                 <option value="Salad"> Salad</option>
@@ -62,9 +85,12 @@
                 <option value="Dessert"> Dessert</option>
                 <option value="Beverages"> Beverages</option>
 
-            </select><br /><br />
-                    
-    
+            </select><br /><br /><br />
+            
+            Write Your Recipe:<br />        
+            <textarea align="center" name= "description" rows="10" cols="100" placeholder="Write Your Recipe"> </textarea><br />
+            
+            
             <br /><br /><input type="submit" value="Add Meal"/><br /><br />
         </form>
         

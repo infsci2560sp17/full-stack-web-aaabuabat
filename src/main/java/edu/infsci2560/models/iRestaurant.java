@@ -55,6 +55,7 @@ public enum MealType {
     protected MealTime mealTime;
     protected MealType mealType;
     protected String description;
+   
 
 
     public iRestaurant() {

@@ -4,7 +4,15 @@
 <html>
     <head>
         <title>Spring Security Example </title>
+          <style>
+    body{
+        background-image: url("http://food-and-community.tesco.ie/assets/Uploads/TurkeyByriani.jpg");
+        background-repeat: no-repeat; 
+         background-size: cover;
+    }
+    </style>
     </head>
+     
     <body>        
         <div data-th-if="${param.error}">
             Invalid username and password.
@@ -12,9 +20,9 @@
         <div data-th-if="${param.logout}">
             You have been logged out.
         </div>
-        <form data-th-action="@{/login}" method="post">
-            <div><label> User Name: <input type="text" name="username"/> </label></div>
-            <div><label> Password: <input type="password" name="password"/> </label></div>
+        <form align="center" data-th-action="@{/login}" method="post">
+            <div><label> User Name  : <input type="text" name="username"/> </label></div>
+            <div><label> Password   : <input type="password" name="password"/> </label></div>
             <div><input type="submit" value="Sign In"/></div>
         </form>
     </body>
