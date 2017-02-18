@@ -20,7 +20,7 @@ All customer will be able to create an account on the restaurant’s website, an
 5. Why is your proposed Web application unique or creative beyond simply meeting the minimum requirements?
 
 
-Since the most of the online restaurants in the market are based on connecting other restaurants with the customer without providing fancy details for the meals and enable the customers to write reviews or rated, this restaurant, iRestaurant will be more interactive. So the reason why I want to make it a restaurant, not just connecting other restaurants without having the ability to order (so it is a restaurant), is that I want the customers to interact with each other and they can through that have adequate details for ever meal.
+Since the most of the online restaurants in the market are based on connecting other restaurants with the customer without providing fancy details for the meals and enable the customers to write reviews or rated, this restaurant, iRestaurant will be more interactive. So the reason why I want to make it a restaurant, not just connecting other restaurants without having the ability to order (so it is a restaurant), is that I want the customers to interact with each other and they can through that have adequate details for every meal.
  
 
 
