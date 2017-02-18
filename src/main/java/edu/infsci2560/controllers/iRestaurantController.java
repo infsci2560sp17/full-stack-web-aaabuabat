@@ -1,6 +1,9 @@
 package edu.infsci2560.controllers;
 
 import edu.infsci2560.models.iRestaurant;
+import edu.infsci2560.models.iRestaurant.CuisineType;
+import edu.infsci2560.models.iRestaurant.MealTime;
+import edu.infsci2560.models.iRestaurant.MealType;
 import edu.infsci2560.repositories.iRestaurantRepository;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +29,12 @@ public class iRestaurantController {
     
     @RequestMapping(value = "meals", method = RequestMethod.GET)
     public ModelAndView index() {        
-        return new ModelAndView("iRestaurant", "iRestaurant", repository.findAll());
+        return new ModelAndView("meals", "meals", repository.findAll());
     }
     
     @RequestMapping(value = "meals/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView create(@ModelAttribute @Valid iRestaurant irestaurant, BindingResult result) {
-        repository.save(irestaurant);
-        return new ModelAndView("iRestaurant", "iRestaurant", repository.findAll());
+    public ModelAndView create(@ModelAttribute @Valid iRestaurant meals, BindingResult result) {
+        repository.save(meals);
+        return new ModelAndView("meals", "meals", repository.findAll());
     }
 }

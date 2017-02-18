@@ -17,7 +17,7 @@ public class iRestaurant {
       private static final long serialVersionUID = 1L;
 
     public enum CuisineType {
-        None,
+        Unknown,
         Mediterranean ,
         Indian ,
         Ozbki , 
@@ -27,7 +27,7 @@ public class iRestaurant {
     
 }
  public enum MealTime {
-        None,
+        Unknown,
         Breakfast ,
         Brunch ,
         Lunch , 
@@ -36,7 +36,7 @@ public class iRestaurant {
         
 }
 public enum MealType {
-        None,
+        Unknown,
         Appetizer ,
         Salad ,
         Main_Course , 
@@ -51,33 +51,33 @@ public enum MealType {
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
     protected String title;
+    protected CuisineType cuisineType;
+    protected MealTime mealTime;
+    protected MealType mealType;
     protected String description;
-    protected CuisineType CuisineType;
-    protected MealTime MealTime;
-    protected MealType MealType;
 
 
     public iRestaurant() {
         this.id          = Long.MAX_VALUE;
         this.title       = null;
+        this.cuisineType = CuisineType.Unknown;
+        this.mealTime    = MealTime.Unknown;
+        this.mealType    = MealType.Unknown;
         this.description = null;
-        this.CuisineType = null;
-        this.MealTime    = null;
-        this.MealType    = null; 
     }
 
-    public iRestaurant(Long id, String title, String description, CuisineType CuisineType, MealTime MealTime, MealType MealType) {
+    public iRestaurant(Long id, String title, CuisineType cuisineType, MealTime mealTime, MealType mealType, String description) {
         this.id          = id;
         this.title       = title;
+        this.cuisineType = cuisineType;
+        this.mealTime    = mealTime;
+        this.mealType    = mealType;
         this.description = description;
-        this.CuisineType = CuisineType;
-        this.MealTime    = MealTime;
-        this.MealType    = MealType;
     }
 
     @Override
     public String toString() {
-        return "[ id=" + this.id + ", title=" + this.title + ", description" + this.description + ", CuisineType=" + this.CuisineType + ", MealTime=" + this.MealTime + ", MealType" + this.MealType + " ]";
+        return "[ id=" + this.id + ", title=" + this.title  + ", CuisineType=" + this.cuisineType + ", MealTime=" + this.mealTime + ", MealType" + this.mealType + ", description" + this.description + " ]";
     }
 
     @Override
@@ -104,62 +104,47 @@ public enum MealType {
         this.title = title;
     }
 
- /**
-     * @return the name
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * @param description the name to set
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-
-
     /**
      * @return the CuisineType
      */
     public CuisineType getCuisineType() {
-        return CuisineType;
+        return cuisineType;
     }
 
     /**
      * @param CuisineType the CuisineType to set
      */
-    public void setCuisineType(CuisineType CuisineType) {
-        this.CuisineType = CuisineType;
+    public void setCuisineType(CuisineType cuisineType) {
+        this.cuisineType = cuisineType;
     }
+    
     
         /**
      * @return the MealTime
      */
     public MealTime getMealTime() {
-        return MealTime;
+        return mealTime;
     }
 
     /**
      * @param MealTime the MealTime to set
      */
-    public void setMealTime(MealTime MealTime) {
-        this.MealTime = MealTime;
+    public void setMealTime(MealTime mealTime) {
+        this.mealTime = mealTime;
     }
     
         /**
      * @return the MealType
      */
     public MealType getMealType() {
-        return MealType;
+        return mealType;
     }
 
     /**
      * @param MealType the MealType to set
      */
-    public void setMealType(MealType MealType) {
-        this.MealType = MealType;
+    public void setMealType(MealType mealType) {
+        this.mealType = mealType;
     }
     
     
@@ -176,6 +161,20 @@ public enum MealType {
      */
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    /**
+     * @return the name
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * @param description the name to set
+     */
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }

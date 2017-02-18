@@ -6,7 +6,9 @@ package edu.infsci2560.services;
 
 
 import edu.infsci2560.models.iRestaurant;
-//import edu.infsci2560.models.iRestaurant.CuisineType;
+import edu.infsci2560.models.iRestaurant.CuisineType;
+import edu.infsci2560.models.iRestaurant.MealTime;
+import edu.infsci2560.models.iRestaurant.MealType;
 import edu.infsci2560.repositories.iRestaurantRepository;
 import java.util.ArrayList;
 import java.util.HashMap;

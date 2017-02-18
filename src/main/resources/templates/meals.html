@@ -10,30 +10,29 @@
         <div>
             <table style="border: 2px solid black">
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Cuisine Type</th>
-                    <th>Meal Time</th>
-                    <th>Meal Type</th>
-                    <th>Recipe</th>
+                    <th width="50">ID                  </th>
+                    <th width="50">Name                </th>
+                    <th width="50">Cuisine Type        </th>
+                    <th width="50">Meal Time           </th>
+                    <th width="50">Meal Type           </th>
+                    <th width="50">Recipe              </th>
                 </tr>                
                 <tr data-th-each="iRestaurant : ${meals}">
                     <td data-th-text="${iRestaurant.id}         "></td>
                     <td data-th-text="${iRestaurant.title}      "></td>
-                    <td data-th-text="${iRestaurant.CuisineType}"></td>
-                    <td data-th-text="${iRestaurant.MealTime}   "></td>
-                    <td data-th-text="${iRestaurant.MealType}   "></td>
-                    <td data-th-text="${iRestaurant.description}"></td>
-                </tr>
+                    <td data-th-text="${iRestaurant.cuisineType}"></td>
+                    <td data-th-text="${iRestaurant.mealTime}   "></td>
+                    <td data-th-text="${iRestaurant.mealType}   "></td>
+               </tr>
             </table>
         </div>
         
         <hr />
        Add Meal:<br />
-        <form data-th-action="@{/meals/add}" name="addMealForm" method="post">
+        <form data-th-action="@{/meals/add}" name="addiRestaurantForm" method="post">
             Title: <input type="text" name="title" /><br />
             Cuisine Type:           
-            <select name=" CuisineType">
+            <select name=" cuisineType">
                 <option value="None" selected="selected">None</option>
                 <option value="Indian"> Indian</option>
                 <option value="Ozbki"> Ozbki</option>
@@ -44,7 +43,7 @@
             </select><br />
 
             Meal Time:           
-            <select name=" MealTime">
+            <select name=" mealTime">
                 <option value="None" selected="selected">None</option>
                 <option value="Breakfast"> Breakfast</option>
                 <option value="Brunch"> Brunch</option>
@@ -55,7 +54,7 @@
             </select><br />
 
             Meal Type:           
-               <select name=" MealType ">
+               <select name=" mealType ">
                 <option value="None" selected="selected">None</option>
                 <option value="Appetizer"> Appetizer</option>
                 <option value="Salad"> Salad</option>
@@ -64,11 +63,9 @@
                 <option value="Beverages"> Beverages</option>
 
             </select><br /><br />
-            Write the Recipe:<br />
-           <textarea style="width:400px;height:100px;" type="text" name="iRestaurant" /><br /><br />
-
+                    
     
-            <input type="submit" value="Add Meal"/><br /><br />
+            <br /><br /><input type="submit" value="Add Meal"/><br /><br />
         </form>
         
         <hr />       
