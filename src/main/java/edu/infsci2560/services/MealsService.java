@@ -47,8 +47,8 @@ public class MealsService {
     }
 
     @RequestMapping(method = RequestMethod.POST, consumes="application/json", produces = "application/json")
-    public ResponseEntity<iRestaurant> create(@RequestBody iRestaurant iRestaurant) {
+    public ResponseEntity<iRestaurant> create(@RequestBody iRestaurant irestaurant) {
         HttpHeaders headers = new HttpHeaders();
-        return new ResponseEntity<>(repository.save(iRestaurant), headers, HttpStatus.OK);
+        return new ResponseEntity<>(repository.save(irestaurant), headers, HttpStatus.OK);
     }
 }

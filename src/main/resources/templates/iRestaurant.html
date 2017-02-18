@@ -5,7 +5,7 @@
     </head>
     <body>
        
-         <h1><span data-th-inline="${#httpServletRequest.remoteUser}" data-th-remove="tag">Username</span>'s iRestaurant's!</h1>
+        <h1><span data-th-text="${#httpServletRequest.remoteUser}" data-th-remove="tag">Username</span>'s iRestaurant's!</h1>
           <div data-th-text="${msg}"></div>
         <div>
             <table style="border: 2px solid black">
@@ -63,12 +63,12 @@
                 <option value="Dessert"> Dessert</option>
                 <option value="Beverages"> Beverages</option>
 
-            </select><br />
-            
-            <textarea ="${iRestaurant.description}"rows="4" cols="50"> </textarea><br />
+            </select><br /><br />
+            Write the Recipe:<br />
+           <textarea style="width:400px;height:100px;" type="text" name="iRestaurant" /><br /><br />
 
-            <input type="submit" value="Add Meal"/>
-
+    
+            <input type="submit" value="Add Meal"/><br /><br />
         </form>
         
         <hr />       
