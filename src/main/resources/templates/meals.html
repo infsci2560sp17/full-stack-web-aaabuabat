@@ -25,9 +25,8 @@
         </style>
     </head>
    <body>
-       
-        <h1 align="middle"><span data-th-text="${#httpServletRequest.remoteUser}" data-th-remove="tag"></span>iRestaurant!</h1>
-          <div data-th-text="${msg}"></div>
+        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s iRestaurant's!</h1>
+        
         <div>
             <table align="center" style="border: 2px solid black">
                 <tr>
