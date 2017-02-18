@@ -28,14 +28,14 @@
         <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s iRestaurant's!</h1>
         
         <div>
-            <table align="center" style="border: 2px solid black">
+            <table style="border: 2px solid black">
                 <tr>
-                    <th width="50">ID                  </th>
-                    <th width="50">Name                </th>
-                    <th width="50">Cuisine Type        </th>
-                    <th width="50">Meal Time           </th>
-                    <th width="50">Meal Type           </th>
-                    <th width="50">Recipe              </th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Cuisine Type</th>
+                    <th>Meal Time</th>
+                    <th>Meal Type</th>
+                    <th>Recipe</th>
                 </tr>                
                 <tr data-th-each="iRestaurant : ${meals}">
                     <td data-th-text="${iRestaurant.id}         "></td>
@@ -50,7 +50,7 @@
         
         <hr />
       
-        <form align="middle" data-th-action="@{/meals/add}" name="addiRestaurantForm" method="post">
+        <form data-th-action="@{/meals/add}" name="addiRestaurantForm" method="post">
             Add Meal:<br />
             Title       : <input type="text" name="title" /><br />
             Cuisine Type    :           
@@ -87,7 +87,7 @@
             </select><br /><br /><br />
             
             Write Your Recipe:<br />        
-            <textarea align="center" name= "description" rows="10" cols="100" placeholder="Write Your Recipe"> </textarea><br />
+            <textarea name= "description" rows="10" cols="100" placeholder="Write Your Recipe"> </textarea><br />
             
             
             <br /><br /><input type="submit" value="Add Meal"/><br /><br />
