@@ -59,13 +59,11 @@ Please list key features of your project.
 
 ### Landing Page
 
-Simple Landing Page with a link to the login Page.  
-![](https://photos.google.com/search/_tra_/photo/AF1QipNtlgCERsst0reTYjtSLxQ-hj0-5DFP-VIF1k9K)
+Simple Landing Page with a link to the login Page.![](https://i.imgur.com/jsoolY7.jpg)
 
 ### User Input Form
 
-This page will enable the user to enter the recpie that he has. 
-![](https://photos.google.com/search/_tra_/photo/AF1QipMGc99oWFP_Ev-GIXb_QKcCxcIKh0OoLGe5PpcG)
+This page will enable the user to enter the recpie that he has.![](https://i.imgur.com/H5x1Vu5.jpg)
 
 ## API
 
