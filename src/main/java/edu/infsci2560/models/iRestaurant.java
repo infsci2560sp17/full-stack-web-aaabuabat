@@ -3,10 +3,14 @@ package edu.infsci2560.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 import javax.persistence.Id;
+//import javax.persistence.ElementCollection;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import java.util.List;
 /**
  *
  * @author aaabuabat
@@ -14,7 +18,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 @Entity
 
 public class iRestaurant {
-      private static final long serialVersionUID = 1L;
+  //    private static final long serialVersionUID = 1L;
 
     public enum CuisineType {
         Unknown,
@@ -55,8 +59,13 @@ public enum MealType {
     protected MealTime mealTime;
     protected MealType mealType;
     protected String description;
-   
-
+      
+    @OneToMany(targetEntity=KitchenKit.class, mappedBy="irestaurant", cascade=CascadeType.ALL)
+    protected List<KitchenKit> kitchenKit;
+    @OneToMany(targetEntity=Ingredient.class, mappedBy="irestaurant", cascade=CascadeType.ALL)
+    protected List<Ingredient> ingredients;
+    @OneToMany(targetEntity=Directions.class, mappedBy="irestaurant", cascade=CascadeType.ALL)
+    protected List<Directions> directions;
 
     public iRestaurant() {
         this.id          = Long.MAX_VALUE;
@@ -76,10 +85,42 @@ public enum MealType {
         this.description = description;
     }
 
+   /* @Override
+    public String toString() {
+        return "[ id=" + this.id + ", title=" + this.title  + ", CuisineType=" + this.cuisineType + ", MealTime=" + this.mealTime + ", MealType" + this.mealType + ", description" + this.description + ", KitchenKit"+ this.kitchenKit + " ]";
+    }*/
+
     @Override
     public String toString() {
-        return "[ id=" + this.id + ", title=" + this.title  + ", CuisineType=" + this.cuisineType + ", MealTime=" + this.mealTime + ", MealType" + this.mealType + ", description" + this.description + " ]";
+        String result = String.format(
+                "iRestaurant[id=%d, title='%s', cuisineType='%s', MealTime='%s', MealType='%d', description='%s']%n",
+                this.id, this.title, this.cuisineType, this.mealTime, this.mealType, this.description);
+        if (ingredients != null) {
+            for(Ingredient ingredient : ingredients) {
+                result += String.format(
+                        "Ingredient[ id=%d, value='%s', unit='%s', text='%s']%n",
+                        ingredient.getId(), ingredient.getValue(), ingredient.getUnit(), ingredient.getText());
+            }
+        }
+              
+        if (directions != null) {
+            for(Directions direction : directions) {
+                result += String.format(
+                        "Directions[ id=%d, text='%s']%n",
+                        direction.getId(), direction.getText());
+            }
+        }
+        if (kitchenKit != null) {
+            for(KitchenKit kitchenKits : kitchenKit) {
+                result += String.format(
+                        "KitchenKit[ id=%d, text='%s']%n",
+                        kitchenKits.getId(), kitchenKits.getText());
+            }
+        }
+        
+        return result;
     }
+    
 
     @Override
     public boolean equals(Object other) {
@@ -177,5 +218,39 @@ public enum MealType {
     public void setDescription(String description) {
         this.description = description;
     }
+    
+     /**
+     * @return the name
+     */
+    public  List<KitchenKit> getKitchenKit() {
+        return kitchenKit;
+    }
 
+    /** 
+     * @param kitchenKit the name to set
+     */
+    public void setKitchenKit(List<KitchenKit> kitchenKit) {
+        this.kitchenKit = kitchenKit;
+    }
+    
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+ /**
+     * @return the name
+     */
+    public  List<Directions> getDirections() {
+        return directions;
+    }
+
+    /** 
+     * @param kitchenKit the name to set
+     */
+    public void setDirections(List<Directions> directions) {
+        this.directions = directions;
+    }
 }

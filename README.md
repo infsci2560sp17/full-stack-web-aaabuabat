@@ -44,21 +44,28 @@ TODO : Modify to match your project specific Travis Build
 
 ## Key Features
 
-TODO : Please list key features of your project.
+Please list key features of your project.
 
-* Key Feature 1
-* Key Feature 2
-* Key Feature N
+* The user is able to add a recipes.
+* The user is able to dispaly a recipes.
+* The user is able to dispaly a recipes.
+* A particular recipe could be deleted by its ID.
+* A particular recipe could be updated by its ID.
+* The user is able to upload a picture for a recipe.
+* All recipes can be retrieved through the api as a JSON format.
+
 
 ## Project Details
 
 ### Landing Page
 
-TODO : please provide a description of your landing page inluding a screen shot ![](https://.../image.JPG)
+Simple Landing Page with a link to the login Page.  
+![](https://photos.google.com/search/_tra_/photo/AF1QipNtlgCERsst0reTYjtSLxQ-hj0-5DFP-VIF1k9K)
 
 ### User Input Form
 
-TODO : please provide a description of at least 1 user input form including a screen shot ![](https://.../image.jpg)
+This page will enable the user to enter the recpie that he has. 
+![](https://photos.google.com/search/_tra_/photo/AF1QipMGc99oWFP_Ev-GIXb_QKcCxcIKh0OoLGe5PpcG)
 
 ## API
 

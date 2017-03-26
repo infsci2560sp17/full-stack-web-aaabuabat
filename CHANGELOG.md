@@ -3,9 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
-## [Unreleased]
+## [v1.4] - 2017-03-25
 ### Added
-- TBD.
+- Three Entities which meet the requirements were added.
+- Four Controllers which meet the requirements were added.
+- Three Repositories which meet the requirements were added.
+- Three RESTful services that return JSON were added.
+- The site  begin to leverage CSS for styling. 
+- The use the HTML5 for layout and it is HTML5 compliant.
+- Javascript were added. 
+- iRestaurant controller suuport the get, post, put, and delete methods, which meet the requirement. 
+
 
 ## [v1.2] - 2017-01-28
 ### Added

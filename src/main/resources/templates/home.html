@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Spring Security Example</title>
-    <style>
-    body{
-        background-image: url("http://food-and-community.tesco.ie/assets/Uploads/TurkeyByriani.jpg");
-        background-repeat: no-repeat; 
-        background-size: cover;
-    }
-    </style>
+        <title>iRestaurant</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"/>
+        <style>
+            body,h1 {font-family: "Raleway", sans-serif}
+            body, html {height: 100%}
+          body {
+                background-image: url('https://www.diabetes.ie/wp-content/uploads/2014/10/Recipes.jpg');
+                min-height: 100%;
+                background-position: center;
+                background-size: cover;
+            }
+        </style>
     </head>
     <body>
-        <h1>Welcome Everyone!</h1>
-
-        <p>Click <a data-th-href="@{/meals}">here</a> to see the Meals.</p>
+        <div  class = "w3-display-middle">
+        <center><h1>Welcome Everyone!</h1></center>
+      <center>  <p>Click <a data-th-href="@{/irestaurant}">here</a> to see the menu.</p></center>
+        </div>
     </body>
-</html>
+    </html>
