@@ -6,7 +6,6 @@
           <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/lib/w3.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <style>
-        
             .button {
                 background-color: Transparent;
                 background-repeat:no-repeat;
@@ -86,62 +85,7 @@
     </head>
 
   
-    <body class="w3-container">
-        <h1><span data-th-text="${#httpServletRequest.remoteUser}" data-th-remove="tag">Username</span>'s iRestaurant!</h1>
-        
-
-        <table class="w3-table-all w3-hoverable">
-            <tr class="w3-Blue">
-            
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Cuisine Type</th>
-                    <th>Meal Time</th>
-                    <th>Meal Type</th>
-                    <th>Recipe</th>
-                    <th width="300">Ingredients</th>
-                    <th width="250">Directions</th>
-                    <th width="250">Kitchen Kit</th>
-                    <th> Delete</th>
-                    <th> Update</th>
-                        
-                </tr>                
-                <tr data-th-each="iRestaurant : ${irestaurant}">
-                    <td data-th-text="${iRestaurant.id}         "></td>
-                    <td data-th-text="${iRestaurant.title}      "></td>
-                    <td data-th-text="${iRestaurant.cuisineType}"></td>
-                    <td data-th-text="${iRestaurant.mealTime}   "></td>
-                    <td data-th-text="${iRestaurant.mealType}   "></td>
-                    <td data-th-text="${iRestaurant.description}"></td>
-                    <td>
-                    <ul> 
-                        <li data-th-each="ingredient : ${iRestaurant.ingredients}" data-th-text="|${ingredient.value} ${ingredient.unit} ${ingredient.text}|"></li>
-                    </ul>
-                </td>
-                <td>
-                    <ol>          
-                        <li data-th-each="direction : ${iRestaurant.directions}" data-th-text="|${direction.text}|"></li>
-                    </ol>
-                </td>
-                <td>
-                    <ol> 
-                        <li data-th-each="kitchenKit : ${iRestaurant.kitchenKit}" data-th-text="|${kitchenKit.text}|"></li>
-                    </ol>
-                </td>
-                <td> 
-                <form data-th-object="${iRestaurant.id}" data-th-action="@{/irestaurant/delete/}+${iRestaurant.id}" data-th-method="delete" onsubmit="return confirm('Are you sure of deleting?')">
-                <input class="w3-btn w3-round w3-gray " type="submit" value="Delete Meal" /> 
-               </form>
-                    </td>
-                    <td>
-              <a data-th-object="${iRestaurant.id}" data-th-href="@{/irestaurantUpdate/update/}+${iRestaurant.id}"> Update </a>
-                    </td>
-                </tr>
-            </table>
-       
-          
-        <hr />
-        </body>
+   
         <style>
             .button {
                 background-color: Transparent;
@@ -169,61 +113,55 @@
          
          <div id="content">
         <body class="w3-container">
-        
         <div class="w3-row">
         <div class="w3-full w3-card-4">
         <div class="w3-container w3-Purple">
                 
-         <center> Add a Dish<br /></center>
+         <center> Update a Dish<br /></center>
            </div>
-        <form class="w3-container" data-th-action="@{/irestaurant/add}" name="addiRestaurantForm" method="post">
+  <form class="w3-container" data-th-object="${irestaurant}" data-th-action="@{/irestaurantUpdate/update/}+${irestaurant.id}" name="updateiRestaurantForm" data-th-method="put">
+
           <div class="w3-group"> 
-            <label>Title:</label>     : <input type="text" name="title" /><br />
+            <label>Title:</label>     : <input type="text"  data-th-field="*{title}" /><br />
             
             </div>
             <div class="w3-group"> 
            <label> Cuisine Type    :</label>           
-            <select name="cuisineType">
-                <option value="None" selected="selected">None</option>
-                <option value="Indian"> Indian</option>
-                <option value="Ozbki"> Ozbki</option>
-                <option value="Westren"> Westren</option>
-                <option value="Chinese"> Chinese</option>
-                <option value="Mediterranean"> Mediterranean</option>
-
-            </select><br />
+            <select class="w3-select w3-border w3-round" data-th-field="*{cuisineType}">
+                <option data-th-each="elem : ${T(edu.infsci2560.models.iRestaurant.CuisineType).values()}"
+                        data-th-value="${elem.name()}"
+                        data-th-text="${elem.name()}"
+                        data-th-selected="${elem.name()} eq ${cuisineType}"></option>
+            </select>
+            
+            <br />
             </div>
             <div class="w3-group"> 
             <label>Meal Time       :</label>           
-            <select name="mealTime">
-                <option value="None" selected="selected">None</option>
-                <option value="Breakfast"> Breakfast</option>
-                <option value="Brunch"> Brunch</option>
-                <option value="Lunch"> Lunch</option>
-                <option value="Dinner"> Dinner</option>
-                <option value="Supper"> Supper</option>
-            
-            </select><br />
+            <select class="w3-select w3-border w3-round" data-th-field="*{mealTime}">
+                <option data-th-each="elem : ${T(edu.infsci2560.models.iRestaurant.MealTime).values()}"
+                        data-th-value="${elem.name()}"
+                        data-th-text="${elem.name()}"
+                        data-th-selected="${elem.name()} eq ${mealTime}"></option>
+            </select>
+            <br />
             </div>
             <div class="w3-group"> 
            <label> Meal Type       :</label>           
-               <select name="mealType">
-                <option value="None" selected="selected">None</option>
-                <option value="Appetizer"> Appetizer</option>
-                <option value="Salad"> Salad</option>
-                <option value="Main_Course"> Main Course</option>
-                <option value="Dessert"> Dessert</option>
-                <option value="Beverages"> Beverages</option>
-            
-            </select><br /><br /><br />
+            <select class="w3-select w3-border w3-round" data-th-field="*{mealType}">
+                <option data-th-each="elem : ${T(edu.infsci2560.models.iRestaurant.MealType).values()}"
+                        data-th-value="${elem.name()}"
+                        data-th-text="${elem.name()}"
+                        data-th-selected="${elem.name()} eq ${mealType}"></option>
+            </select>
+            <br /><br /><br />
             </div>
                  <div class="w3-group" > 
                      <label>Ingredients:</label>
                         <div id="ingredients">
-                            <div class="w3-row w3-tiny w3-wide w3-center w3-font-verdana">
+                            <div class="w3-row w3-tiny w3-wide w3-center">
                                 <div class="w3-col s2 w3-padding-small">
-                                    
-                                    <p><font face="verdana" color="black">Quantity</font></p>
+                                 <p><font face="verdana" color="black">Quantity</font></p>
 
                                 </div>
                                 <div class="w3-col s4 w3-padding-small">
@@ -235,26 +173,20 @@
                                 </div>
                             </div>
                             <!-- ingredient #1 -->
-                            <div class="w3-row">
+                            <div class="w3-row" data-th-each="ing, row : ${irestaurant.ingredients}">
                                 <div class="w3-col s2 w3-padding-small">
-                                    <input class="w3-input w3-border w3-round" type="text" name="ingredients[0].value" />
+                                    <input class="w3-input w3-border w3-round" type="text" data-th-field="*{ingredients[__${row.index}__].value}" />
                                 </div>
                                 <div class="w3-col s4 w3-padding-small">
-                                    <select class="w3-select w3-border w3-round" name="ingredients[0].unit">
-                                        <option value="None" selected="selected">None</option>
-                                        <option value="Pinch">Pinch</option>
-                                        <option value="Pound">Pound</option>
-                                        <option value="Tablespoon">Tablespoon</option>
-                                        <option value="Teaspoon">Teaspoon</option>
-                                        <option value="Grams">Grams</option>
-                                        <option value="Ounce">Ounce</option>
-                                        <option value="Cup">Cup</option>
-                                        <option value="Dish">Dish</option>
-                                        <option value="Gallon">Gallon</option>
+                                    <select class="w3-select w3-border w3-round" data-th-field="*{ingredients[__${row.index}__].unit}">
+                                        <option data-th-each="elem : ${T(edu.infsci2560.models.Ingredient.Unit).values()}"
+                                                data-th-value="${elem.name()}"
+                                                data-th-text="${elem.name()}"
+                                                data-th-selected="${elem.name()} eq ${ing.unit}"></option>
                                     </select>
                                 </div>
                                 <div class="w3-col s4 w3-padding-small">
-                                    <input class="w3-input w3-border w3-round" type="text" name="ingredients[0].text" />
+                                    <input class="w3-input w3-border w3-round" type="text" data-th-field="*{ingredients[__${row.index}__].text}" />
                                 </div>
                             </div>
                         </div>
@@ -266,7 +198,7 @@
                     <div class="w3-group"> 
                         <label>Directions:</label>
                         <ol id="directions">
-                            <li><input class="w3-input w3-border w3-round inline-input" style="width: 40%" type="text" name="directions[0].text" /></li>
+                            <li data-th-each="ing, row : ${irestaurant.directions}"><input class="w3-input w3-border w3-round inline-input" style="width: 40%" type="text" data-th-field="*{directions[__${row.index}__].text}"  /></li>
                         </ol>
                         <div class="w3-right-align w3-padding-small">
                             <button onclick="addDirection(event)">More Direction</button>
@@ -276,7 +208,7 @@
                     <div class="w3-group"> 
                         <label>kitchenKit:</label>
                         <ol id="kitchenKit">
-                            <li><input class="w3-input w3-border w3-round inline-input" style="width: 40%" type="text" name="kitchenKit[0].text" /></li>
+                            <li data-th-each="k, row : ${irestaurant.kitchenKit}"><input class="w3-input w3-border w3-round inline-input" style="width: 40%" type="text" data-th-field="*{kitchenKit[__${row.index}__].text}"  /></li>
                         </ol>
                         <div class="w3-right-align w3-padding-small">
                             <button onclick="addKitchenKit(event)">More Kit</button>
@@ -285,13 +217,10 @@
             
             <div class="w3-group"> 
             <label>Write Your Description for This Recipe:</label><br />        
-            <textarea name= "description" rows="5" cols="70" placeholder="Write Your Recipe"> </textarea><br /></div>
+            <textarea data-th-field= "*{description}" rows="5" cols="70" placeholder="Write Your Recipe"> </textarea><br /></div>
             
-        
-         <a data-th-href="@{/files}">Upload The Result of The Dish</a>
-       
-        
-            <br /><br /><input type="submit" value="Add The Dish"/><br /><br />
+            
+            <br /><br /><input type="submit" value="Update the dish"/><br /><br />
         </form>
         </div>
          </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>File Upload</title>
+        <title>Picture Upload</title>
     </head>
     <body>
 
@@ -12,7 +12,7 @@
         <div>
             <form data-th-action="@{/files}" name="uploadFileForm" method="POST" enctype="multipart/form-data" >                
 <!--            <form data-th-action="@{/files(${_csrf.parameterName}=${_csrf.token})}" name="uploadFileForm" method="POST" enctype="multipart/form-data" >                                -->
-                File to upload:<input type="file" name="file" /><br />
+                Picture to upload:<input type="file" name="file" /><br />
                 <input type="submit" value="Upload" />
             </form>
         </div>

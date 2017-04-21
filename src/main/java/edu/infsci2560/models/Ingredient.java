@@ -29,7 +29,7 @@ public class Ingredient {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
     protected String value;
     protected Unit unit;
@@ -120,9 +120,9 @@ public class Ingredient {
         this.text = text;
     }
 
-    public iRestaurant getIRestaurant() {
+    /*public iRestaurant getIRestaurant() {
         return irestaurant;
-    }
+    }*/
 
     public void setIRestaurant(iRestaurant irestaurant) {
         this.irestaurant = irestaurant;

@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## [v1.4] - 2017-04-20
+### Added
+- The Update function was added. 
+- A new Page for the Update function was added.
+- An example of API was added.
+
+###Improved
+- The way of deleting a dish.
+- The format of the main pages. 
 
 ## [v1.4] - 2017-03-25
 ### Added

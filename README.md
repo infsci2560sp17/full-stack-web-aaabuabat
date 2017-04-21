@@ -63,63 +63,51 @@ Simple Landing Page with a link to the login Page.![](https://i.imgur.com/jsoolY
 
 ### User Input Form
 
-This page will enable the user to enter the recpie that he has.![](https://i.imgur.com/H5x1Vu5.jpg)
+This page will enable the user to enter the recpie that he has.![](http://imgur.com/a/sN69f.jpg)
 
 ## API
 
-TODO : please provide a description of at least 1 API including a sample of request data and response data in both XML and JSON format.
-
 ### API Method 1
 
-    POST photos/:id/tags
+    GET /public/api/irestaurant/:id
 
 #### Parameters
 
-- **id** _(required)_ — The Photo ID to add tags for.
-- **tags** _(required)_ — Comma separated tags.
+- **id** _(required)_ — The Dish ID to grap its data.
 
 #### Response
 
-A JSON or XMLobject containing the PhotoID and list of tags accepted.
+A JSON containing the DishID and its data.
 
 #### Errors
 
 All known errors cause the resource to return HTTP error code header together with a JSON array containing at least 'status' and 'error' keys describing the source of error.
 
-- **404 Not Found** — The photo was not found.
+- **404 Not Found** — The dish was not found.
 
 #### Example
 
 ##### Request
 
-    POST /v1/photos/123456/tags
-
-##### Body
-
-    tags=cute,puppy
+    GET /public/api/irestaurant/2
 
 
 ##### JSON Response
 
 ```json
 {
-    "photoId": 123456,
-    "tags": ["cute", "puppy"]
+   "id":1,
+   "title":"Biryani",
+   "cuisineType":"Indian",
+   "mealTime":"Dinner",
+   "mealType":"Main_Course",
+   "description":"Rice + Meat",
+   "kitchenKit":[{"id":1,"text":"Pot"},{"id":2,"text":"Spons"},{"id":3,"text":"Knives"}],
+   "ingredients":[{"id":1,"value":"1 1/2","unit":"Tablespoon","text":"Salt"},{"id":2,"value":"1","unit":"Pound","text":"Rice"},{"id":3,"value":"2","unit":"Tablespoon","text":"chopped fresh parsle"},{"id":4,"value":"2","unit":"Pound","text":"Meat"},{"id":5,"value":"1","unit":"Tablespoon","text":"Oil"}],
+   "directions":[{"id":1,"text":"Preheat oven broiler"},{"id":2,"text":"Mix items together"},{"id":3,"text":"chopped fresh parsle"}]
 }
 ```
 
-##### XML Response
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<PhotoTags>
-    <photoId>123456</PhotoId>
-        <tags>
-            <tag>cute</tag>
-            <tag>puppy</tag>
-        </tags>
-</PhotoTags>
-```
 
 ## Technologies Used
 

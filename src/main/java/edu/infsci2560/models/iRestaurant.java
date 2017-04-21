@@ -18,7 +18,7 @@ import java.util.List;
 @Entity
 
 public class iRestaurant {
-  //    private static final long serialVersionUID = 1L;
+   // private static final long serialVersionUID = 1L;
 
     public enum CuisineType {
         Unknown,
@@ -52,7 +52,7 @@ public enum MealType {
 
 
   @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
     protected String title;
     protected CuisineType cuisineType;
@@ -219,19 +219,7 @@ public enum MealType {
         this.description = description;
     }
     
-     /**
-     * @return the name
-     */
-    public  List<KitchenKit> getKitchenKit() {
-        return kitchenKit;
-    }
-
-    /** 
-     * @param kitchenKit the name to set
-     */
-    public void setKitchenKit(List<KitchenKit> kitchenKit) {
-        this.kitchenKit = kitchenKit;
-    }
+   
     
     public List<Ingredient> getIngredients() {
         return ingredients;
@@ -252,5 +240,19 @@ public enum MealType {
      */
     public void setDirections(List<Directions> directions) {
         this.directions = directions;
+    }
+    
+      /**
+     * @return the name
+     */
+    public  List<KitchenKit> getKitchenKit() {
+        return kitchenKit;
+    }
+
+    /** 
+     * @param kitchenKit the name to set
+     */
+    public void setKitchenKit(List<KitchenKit> kitchenKit) {
+        this.kitchenKit = kitchenKit;
     }
 }

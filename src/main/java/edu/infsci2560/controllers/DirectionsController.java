@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class DirectionsController {
     @Autowired
     private DirectionsRepository repository;
-    
+  
     @RequestMapping(value = "directions", method = RequestMethod.GET)
     public ModelAndView index() {        
         return new ModelAndView("directions", "directions", repository.findAll());

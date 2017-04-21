@@ -17,7 +17,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 public class KitchenKit {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
     protected String text;    // list of the Kitchen Kit that have been used in this meal. 
     
@@ -80,9 +80,9 @@ public class KitchenKit {
         this.text = text;
    }
    
-    public iRestaurant getIRestaurant() {
+    /*public iRestaurant getIRestaurant() {
         return irestaurant;
-    }
+    }*/
 
     public void setIRestaurant(iRestaurant irestaurant) {
         this.irestaurant = irestaurant;

@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class IngredientController {
     @Autowired
     private IngredientRepository repository;
-    
+   
     @RequestMapping(value = "ingredient", method = RequestMethod.GET)
     public ModelAndView index() {        
         return new ModelAndView("ingredient", "ingredient", repository.findAll());
