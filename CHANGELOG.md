@@ -7,10 +7,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - The Update function was added. 
 - A new Page for the Update function was added.
 - An example of API was added.
-
-###Improved
-- The way of deleting a dish.
-- The format of the main pages. 
+- The way of deleting a dish was improved.
+- The format of the main pages was improved. 
 
 ## [v1.4] - 2017-03-25
 ### Added
