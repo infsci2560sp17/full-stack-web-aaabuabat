@@ -63,7 +63,7 @@ Simple Landing Page with a link to the login Page.![](https://i.imgur.com/jsoolY
 
 ### User Input Form
 
-This page will enable the user to enter the recpie that he has.![](http://imgur.com/a/sN69f.jpg)
+This page will enable the user to enter the recpie that he has.![](https://thumb.ibb.co/npEgJ5/Untitled.png)
 
 ## API
 
